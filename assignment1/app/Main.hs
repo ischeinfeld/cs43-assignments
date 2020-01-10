@@ -47,10 +47,10 @@ draw generations niter degrees = format $ drawActions degrees (generations !! ni
         rotateUp = rotateBy (1/4)
 
 
--- mainWith automatically generates a program that parses
--- an Int and Double from the command line. Once you are done completing the
--- code in LSystem, you can replace the first main definition with the second
--- to draw a different diagram.
+-- mainWith automatically generates a program that parses an Int and Double from
+-- the command line. TODO Once you are done completing the code in LSystem, you
+-- can replace the first main definition with the second to draw a different
+-- diagram.
 
 main = mainWith (draw $ generate [Draw] rules1)
 -- main = mainWith (draw $ generateByMap [Constant 0] ruleMap1)
