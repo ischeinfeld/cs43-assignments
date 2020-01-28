@@ -1,3 +1,3 @@
-# assignment2
+# Assignment2
 
-add description of assignment2 here
+Second assignment for Stanford's CS43.
