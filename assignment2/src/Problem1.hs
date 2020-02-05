@@ -18,3 +18,4 @@ data LotsOfPieces a =
   deriving (Show, Eq)
 
 -- TODO write a functor instance for LotsOfPieces
+instance Functor LotsOfPieces where
