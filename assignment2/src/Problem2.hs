@@ -14,6 +14,7 @@ data Stream a
 -- TODO Write the following function to convert a stream to an infinite list
 
 streamToList :: Stream a -> [a]
+streamToList = undefined
 
 
 -- TODO Write a Show instance for Stream that shows the first 10 elements
@@ -23,13 +24,16 @@ streamToList :: Stream a -> [a]
 -- initial starting value and a generating function
 
 streamFromSeed :: (a -> a) -> a -> Stream a
+streamFromSeed = undefined
 
 
 -- TODO Define a stream of natural numbers
 
 nats :: Stream Integer
+nats = undefined
 
 
 -- TODO Define a stream of fibonacci numbers 0, 1, 1, 2, 3, 5, ...
 
 fibs :: Stream Integer
+fibs = undefined

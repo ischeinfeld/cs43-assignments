@@ -26,3 +26,6 @@ instance Functor (Failing a) where
 
 -- TODO write Applicative instance for (Failing a)
 
+instance Applicative (Failing a) where
+  pure = undefined
+  (<*>) = undefined

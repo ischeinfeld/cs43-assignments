@@ -40,7 +40,7 @@ weatherPage (User name id) (Weather temp rain) =
 buildWeatherPage :: Failing ExceptionLog User
                  -> Failing ExceptionLog Weather
                  -> Failing ExceptionLog Page
-buildWeatherPage = liftA2 weatherPage
+buildWeatherPage = undefined -- liftA2 weatherPage -- TODO uncomment to use your Applicative instance
 
 
 {- Helper functions simulating server and db query results. Note
