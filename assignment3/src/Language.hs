@@ -12,15 +12,27 @@
 module Language where
 
 -- Define the datatype for our language using GADT syntax. 
+--   B: True, False
+--   N: 1, 2, 3, ...
+--   B: (not B)
+--   B: (and B B)
+--   N: (+ N N)
+--   B: (= N N)
+--   B: (if B then B else B)
+--   N: (if B then N else N) 
 
 data Term a where
-  B :: Bool -> Term Bool
-  N :: Integer -> Term Integer
+  B :: Bool -> Term Bool -- this can only create :: Term Bool
+  N :: Integer -> Term Integer -- this only :: Term Integer
   Not :: Term Bool -> Term Bool
   And :: Term Bool -> Term Bool -> Term Bool
   Add :: Term Integer -> Term Integer -> Term Integer
   Equal :: Term Integer -> Term Integer -> Term Bool
   IfThenElse :: Term Bool -> Term a -> Term a -> Term a
+
+{- Note that while the last constructor can construct a `Term a` for any a,
+ - it can only do so when passed a `Term a`. Thus, we can only create values
+ - of type Term Bool and Term Integer. -}
 
 deriving instance Show (Term a) -- deriving for GADT using StandaloneDeriving
 
@@ -53,12 +65,15 @@ data Expr = forall a. (Show a) => Expr (Term a)
 
 deriving instance Show Expr -- Deriving for ex. quantified type using StandaloneDeriving
                             -- Note that this works only because (Term a) has a
-                            -- show instance already.
+                            -- show instance already due to the type constraint
+                            -- in the definition of Expr
 
 {- We cannot write an evaluation function Expr -> a, since we do not know what
  - type `a` of the evaluated Term to return. However, since we know `a` is in Show,
  - we have the function show :: a -> String and can write a function Expr ->
  - String. -}
 
+-- TODO complete this function, hint first pattern match
+
 answer :: Expr -> String
-answer (Expr t) = show $ eval t
+answer = undefined
