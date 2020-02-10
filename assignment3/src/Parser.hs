@@ -60,10 +60,20 @@ item = Parser $ \case
   [] -> Nothing
   (x:xs) -> Just (x, xs)
 
+
+-- This definition of satisfy is different than the one given in class
+-- It uses the guard function defined in Control.Monad, which has type
+--   guard :: Alternative f => Bool -> f ()
+-- and definition
+--   guard True = pure ()
+--   guard False = empty
+-- Working through what this do syntax desugars to and how the binds
+-- actually evaluate is a good idea.
+
 satisfy :: (Char -> Bool) -> Parser Char
 satisfy pred = do
   c <- item
-  guard $ pred c
+  guard $ pred c -- guard :: Alternative f => Bool -> f (), 
   return c
 
 -- And some more parsers!
@@ -85,7 +95,7 @@ string (c:cs) = do
   return (c:cs)
 
 spaces :: Parser String
-spaces = many $ char ' '
+spaces = many $ char ' ' -- many :: f a -> f [a] -- defined in Control.Applicative
 
 token :: Parser a -> Parser a
 token p = do
