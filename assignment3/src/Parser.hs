@@ -10,7 +10,7 @@ import Data.Char
 import Control.Applicative  -- provides Applicative and applicative combinators
 import Control.Monad        -- provides Monad and monadic combinators
 
--- First we write our Parser datatype and implement it's typeclass instances. 
+-- First we write our Parser datatype and implement its typeclass instances. 
 
 newtype Parser a = Parser { getParser :: String -> Maybe (a, String) }
 
@@ -32,7 +32,7 @@ instance Applicative Parser where
   (<*>) = ap -- defined in Control.Monad, ap = do { x1 <- m1; x2 <- m2; return (x1 x2) }
 
 -- TODO complete the Monad instance for Parser. p >>= f should run parser p on
--- it's input, and if a value is parsed we can use f to generate a new parser
+-- its input, and if a value is parsed we can use f to generate a new parser
 -- and run this on the remaining string, returning the result. Review the
 -- lecture code if that is helpful.
 
