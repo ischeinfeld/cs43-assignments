@@ -34,7 +34,8 @@ instance Applicative Parser where
 -- TODO complete the Monad instance for Parser. p >>= f should run parser p on
 -- its input, and if a value is parsed we can use f to generate a new parser
 -- and run this on the remaining string, returning the result. Review the
--- lecture code if that is helpful.
+-- lecture code if that is helpful, this should be quite similar to the
+-- State instance we saw in Lecture 11
 
 instance Monad Parser where
   return :: a -> Parser a
