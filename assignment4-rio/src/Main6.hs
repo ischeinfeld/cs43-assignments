@@ -62,7 +62,7 @@ say msg = do
 sayTime :: Has "handle" r Handle => RIO (Rec r) ()
 sayTime = do
   now <- liftIO $ getCurrentTime
-  say $ "The time is: " ++ show now -- `say` requires the Has "handle" env Handle constraint
+  say $ "The time is: " ++ show now -- `say` requires the Has "handle" r Handle constraint
 
 sayHello :: (Has "handle" r Handle, Has "name" r String) => RIO (Rec r) ()
 sayHello = undefined -- TODO make the necessary change from Main5 to fit the type
