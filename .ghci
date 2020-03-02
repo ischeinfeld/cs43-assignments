@@ -1,0 +1,11 @@
+import Control.Monad.Reader
+import Control.Monad.IO.Class
+import System.IO (Handle, hPutStrLn, stdout, stderr)
+import Data.Time.Clock (UTCTime, getCurrentTime)
+
+:set -XDataKinds
+:set -XTypeOperators
+:set -XOverloadedLabels
+:set -XPolyKinds
+:set -XTypeFamilies
+:set -XFlexibleContexts
