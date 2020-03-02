@@ -13,7 +13,8 @@ sumST xs = runST $ do
 foldlST :: (a -> b -> a) -> a -> [b] -> a
 foldlST f acc xs = undefined
 
--- Might be useful -- from Control.Monad.Loops
+-- Might be useful for the collatz example
+-- from Control.Monad.Loops.
 whileM_ :: (Monad m) => m Bool -> m a -> m ()
 whileM_ p f = go
     where go = do x <- p
