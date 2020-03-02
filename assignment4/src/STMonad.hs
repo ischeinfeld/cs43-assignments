@@ -1,3 +1,5 @@
+module STMonad where
+
 import Control.Monad.ST
 import Data.STRef
 import Control.Monad
