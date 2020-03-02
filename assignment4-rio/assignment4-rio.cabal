@@ -19,6 +19,7 @@ executable app
                      , Main5
                      , Main6
                      , RIO
+                     , STMonad
   build-depends:       base >= 4.7 && < 5
                      , mtl
                      , time
